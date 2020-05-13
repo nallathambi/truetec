@@ -2,25 +2,62 @@ package com.interview.trutec.model;
 
 import java.math.BigDecimal;
 
-import io.swagger.annotations.ApiModelProperty;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-public class Product {
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class Product {	
 	
+	@Setter
+	@Getter
+    public String productName;    
+    
+	@Setter
+	@Getter
+    public String productId;
+    
+	@Setter
+	@Getter
+    public String description;   
+    
+	@Setter
+	@Getter
+    public BigDecimal price;
 	
-    @ApiModelProperty(notes = "The database generated product ID")
-    private String productName;    
+	//INFO : not worked lombok so used manual
+	public String getproductName() {
+        return productName;
+    }
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
     
+	public String getDescription() {
+        return description;
+    }
+    public void setDescription(String description) {
+        this.description = description;
+    }
+   
+    public String getProductId() {
+        return productId;
+    }
+    public void setProductId(String productId) {
+        this.productId = productId;
+    }
     
-    @ApiModelProperty(notes = "The application-specific product ID")
-    private String productId;
-    
-    @ApiModelProperty(notes = "The product description")
-    private String description;
-    
-    @ApiModelProperty(notes = "The image URL of the product")
-    private String imageUrl;
-    
-    @ApiModelProperty(notes = "The price of the product", required = true)
-    private BigDecimal price;
+    public BigDecimal getPrice() {
+        return price;
+    }
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
 
 }
